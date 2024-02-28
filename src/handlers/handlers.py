@@ -13,6 +13,6 @@ async def start_handler(message: Message):
 @router.message()
 async def main_handler(message: Message):
     aggregation_type, dt_from, dt_upto = parse_input(message.text)
-    dataset, lables = get_db_values(aggregation_type, dt_from, dt_upto)
+    dataset, lables = await get_db_values(aggregation_type, dt_from, dt_upto)
     result = fill_missing_values(dataset, lables, dt_from, dt_upto, aggregation_type)
     await message.answer(text=result)

@@ -1,7 +1,7 @@
 from datetime import datetime
 from .connection import collection
 
-def get_db_values(aggregation_type: str, dt_from: str, dt_upto: str):
+async def get_db_values(aggregation_type: str, dt_from: str, dt_upto: str):
 
     if aggregation_type == "day":
         format_date = "%Y-%m-%dT00:00:00"
@@ -51,5 +51,7 @@ def get_db_values(aggregation_type: str, dt_from: str, dt_upto: str):
         }
     ]
 
-    result = list(collection.aggregate(pipeline))
+    cursor = collection.aggregate(pipeline)
+    result = await cursor.to_list(length=None)
+    
     return (result[0].get('dataset'), result[0].get('labels'))
