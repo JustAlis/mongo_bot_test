@@ -32,12 +32,12 @@ def get_db_values(aggregation_type: str, dt_from: str, dt_upto: str):
                         "date": "$dt"
                     }
                 },
-                "total_value": {"$sum": "$value"}  # замените "value" на поле с нужным значением
+                "total_value": {"$sum": "$value"}
             }
         },
         {
             "$sort": {
-                "_id": 1  # Сортируем по полю dt (дата) в возрастающем порядке
+                "_id": 1
             }
         },
         {
