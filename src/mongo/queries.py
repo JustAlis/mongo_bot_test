@@ -36,11 +36,6 @@ def get_db_values(aggregation_type: str, dt_from: str, dt_upto: str):
             }
         },
         {
-            "$sort": {
-                "_id": 1
-            }
-        },
-        {
             "$group": {
                 "_id": None,
                 "dataset": {"$push": "$total_value"},
