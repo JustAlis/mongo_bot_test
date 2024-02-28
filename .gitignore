@@ -1,5 +1,4 @@
 __pycache__/
 test_mongo_env/
-config/
 Pipfile
 Pipfile.lock
