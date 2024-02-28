@@ -18,6 +18,9 @@ https://t.me/BotFatherhttps://t.me/BotFather // <- Получение токен
 
 src/config/config.py dataclass conf        // <- Заменить пустую строку на свой токен 
 
+// У вас должен быть запущен сервер mongodb с необходимой коллекцией из тех задания
+
+src/config/config.py dataclass conf        // <- Заменить пустые строки для mongodb
 ```
 2. ### Запуск:
 ```
